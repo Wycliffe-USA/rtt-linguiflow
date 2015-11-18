@@ -20,6 +20,8 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.provision "file", source: "getcorpora.sh", destination: "/tools/getcorpora.sh"
   config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/getcorpora.sh"
+  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/tokenize.sh"
+  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/mgiza_configfile"
 end
