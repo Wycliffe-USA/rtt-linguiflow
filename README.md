@@ -1,6 +1,6 @@
 # Wycliffe@Urbana15: #Hacktranslation
 
-We aim to bring the power of natural language processing to bear on the work of Bible translation.
+We aim to bring the power of natural language processing (NLP) to bear on the work of Bible translation.
 
 ## The problem
 
