@@ -4,15 +4,15 @@ We aim to bring the power of natural language processing (NLP) to bear on the wo
 
 ## The problem
 
-Bible translation is a task that takes many years of dedicated, hard work from a large number of people. One of the major tasks, accounting for a large portion of the time required in translation, is gathering vocabulary and properly definitions and parts of speech. An existing process called [Rapid Word Collection](http://rapidwords.net/) does an excellent job of collecting a large number of words in a very short period of time. However, the process is almost entirely manual and dependent on human intervention. We would like to develop a process leveraging NLP tools (or even other things. We aren't picky!) that would allow us to 'discover' more words in the target language in a shorter amount of time, using fewer resources.
+Bible translation is a task that takes many years of dedicated, hard work from a large number of people. One of the major tasks, accounting for a large portion of the time required in translation, is gathering vocabulary and properly definining and parts of speech. An existing process called [Rapid Word Collection](http://rapidwords.net/) does an excellent job of collecting a large number of words in a very short period of time. However, the process is almost entirely manual and dependent on human intervention. We would like to develop processes leveraging NLP tools (or even other things. We aren't picky!) that would allow us to 'discover' more words in the target language in a shorter amount of time, using fewer resources.
 
 Many of these languages are poor in written literature, so large sets of words are hard to come by. Some are still largely unwritten. Almost all are in areas where internet connectivity is scarce, slow, or unreliable. The translation activity is happening in remote areas where power is also unreliable and shipping equipment to the site is a gamble.
 
-## Your resources
+## Tools at your disposal
 
-I have provided Vagrant machines that will get you up and running with NLP tool sets and some sample data (but not in any of the language where translation is taking place). Additionally I will provide one or more "unknown" languages in the sample data to serve as material for proof of concept when working to develop NLP against poorly documented languages. 
+I have provided Vagrant machines that will get you up and running with NLP tool sets and some sample data (but not in any of the languages where translation is taking place). Additionally I will provide one or more "unknown" languages in the sample data to serve as material for proof-of-concept when working to develop NLP tools against poorly documented languages. 
 
-Each of the tools can be found in one or more [Vagrant](https://www.vagrantup.com/) machines. [Get instructions on setup here](). 
+Each of the tools can be found in one or more [Vagrant](https://www.vagrantup.com/) machines. [Get instructions on setup here](https://docs.vagrantup.com/v2/installation/index.html). 
 
 Tools I plan on providing: 
 
