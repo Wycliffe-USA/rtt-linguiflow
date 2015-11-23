@@ -5,10 +5,17 @@ According to Moses SMT, "MGIZA was developed by Qin Gao. It is an implementation
 I have also included the Python NLTK library on this, as I will try to do on all the machines. 
 
 ## Quickstart
+```
+vagrant ssh
+``` 
 
-`vagrant ssh`
-`cd ./tools`
-`./getcorpora.sh && tokenize.sh`
+Then
+
+```
+cd ./tools
+echo "This is the part that takes a while": ./getcorpora.sh && tokenize.sh
+```
+
 Wait. A long time. 
 
 ## Using the MGIZA vagrant machine

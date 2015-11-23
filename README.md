@@ -16,10 +16,10 @@ Each of the tools can be found in one or more [Vagrant](https://www.vagrantup.co
 
 Tools I plan on providing: 
 
-- [x] [MGIZA++](https://github.com/moses-smt/mgiza): A multithreaded implementation of GIZA, a word alignment tool. This is rolled into the [mgiza](mgiza/mgiza.md) box. 
+- [x] [MGIZA](https://github.com/moses-smt/mgiza): A multithreaded implementation of GIZA, a word alignment tool. This is rolled into the [mgiza](mgiza/mgiza.md) box. 
 - [x] [Python's NLTK]()
-- [] TensorFlow, for you ~~tryhards~~ really smart people who understand neural networks. 
-- [] Word2Vec
+- [ ] TensorFlow, for you ~~tryhards~~ really smart people who understand neural networks. 
+- [ ] Word2Vec
 
 Any additional tools requested I will try to provide, but the tight turnaround time means I might not be able to do it during Urbana '15. As work on this project continues, I will maintain and support these boxes to the best of my ability. Issues and pull requests are welcome and encouraged. 
 
