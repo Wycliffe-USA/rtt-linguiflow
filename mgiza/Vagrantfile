@@ -18,10 +18,16 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.name = "mgiza"
+  end
+  config.vm.provision "shell", inline: "mkdir /home/vagrant/tools && chown vagrant:vagrant /home/vagrant/tools"
   config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/getcorpora.sh"
-  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/tokenize.sh"
-  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/mgiza_configfile"
+  config.vm.provision "file", source: "tokenize.sh", destination: "/home/vagrant/tools/tokenize.sh"
+  config.vm.provision "file", source: "mgiza_configfile", destination: "/home/vagrant/tools/mgiza_configfile"
+  config.vm.provision "shell", path: "bootstrap.sh"
 end

@@ -1,6 +1,7 @@
 #!/bin/bash
 apt-get update
-apt-get install -y git make build-essential clang libboost-all-dev cmake
+apt-get install -y git make build-essential clang libboost-all-dev cmake python-pip
+sudo pip install -U nltk
 mkdir /mgiza && cd /mgiza
 git clone https://github.com/moses-smt/mgiza.git
 cd ./mgiza/mgizapp
@@ -14,3 +15,4 @@ cd /home/vagrant/tools
 wget http://www.statmt.org/europarl/v5/tools.tgz && tar -xf ./tools.tgz
 rm -f ./tools.tgz
 cd /home/vagrant/tools
+chmod +x ./*.sh
