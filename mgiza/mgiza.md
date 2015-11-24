@@ -13,7 +13,7 @@ Then
 
 ```
 cd ./tools
-echo "This is the part that takes a while": ./getcorpora.sh && tokenize.sh
+echo "This is the part that takes a while"; ./getcorpora.sh && tokenize.sh
 ```
 
 Wait. A long time. 
