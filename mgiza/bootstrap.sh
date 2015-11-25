@@ -1,7 +1,8 @@
 #!/bin/bash
 apt-get update
-apt-get install -y git make build-essential clang libboost-all-dev cmake python-pip
-sudo pip install -U nltk
+apt-get install -y git make build-essential clang libboost-all-dev cmake python-pip python-scipy python-numpy
+pip install -U nltk
+pip install -U gensim
 mkdir /mgiza && cd /mgiza
 git clone https://github.com/moses-smt/mgiza.git
 cd ./mgiza/mgizapp

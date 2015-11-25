@@ -19,7 +19,7 @@ Tools I plan on providing:
 - [x] [MGIZA](https://github.com/moses-smt/mgiza): A multithreaded implementation of GIZA, a word alignment tool. This is rolled into the [mgiza](mgiza/mgiza.md) box. 
 - [x] [Python's NLTK](http://www.nltk.org/)
 - [ ] [TensorFlow](http://www.tensorflow.org/), for you ~~tryhards~~ really smart people who understand neural networks. 
-- [ ] [Word2Vec](https://code.google.com/p/word2vec/), probably using [Gensim](https://radimrehurek.com/gensim/models/word2vec.html) instead of the original. 
+- [X] [Word2Vec](https://code.google.com/p/word2vec/) using [Gensim](https://radimrehurek.com/gensim/models/word2vec.html) instead of the original. 
 
 Any additional tools requested I will try to provide, but the tight turnaround time means I might not be able to do it during Urbana '15. As work on this project continues, I will maintain and support these boxes to the best of my ability. Issues and pull requests are welcome and encouraged. 
 
