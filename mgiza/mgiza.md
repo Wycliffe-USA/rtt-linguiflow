@@ -13,7 +13,7 @@ Then
 
 ```
 cd ./tools
-echo "This is the part that takes a while": ./getcorpora.sh && tokenize.sh
+echo "This is the part that takes a while"; ./getcorpora.sh && tokenize.sh
 ```
 
 Wait. A long time. 
@@ -51,5 +51,14 @@ drwxr-xr-x 3  353500   10000 4096 Jul 25  2008 europarl/
 ```
 
 `getcorpora.sh` will fetch the Europarl English-German parallel text and `tokenize.sh` will tokenize, transform, and run a mgiza's text classification on it. That part takes a while, so be patient. Also, a while means, "I let it run for six hours on 1024MB of memory and a single core and it didn't finish."
+
+Update: Running this on a DigitalOcean droplet with 2 GB of memory, here is the time it took:
+
+```
+real    457m24.826s
+user    457m10.177s
+sys     0m10.712s
+```
+
 
 If you're curious as to how they're doing it, crack open the scripts and take a look. I won't tell anyone. `tokenize.sh` is mostly based on the work from [this blog](https://fabioticconi.wordpress.com/2011/01/17/how-to-do-a-word-alignment-with-giza-or-mgiza-from-parallel-corpus/). 
