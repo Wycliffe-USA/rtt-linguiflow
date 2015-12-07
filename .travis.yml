@@ -2,9 +2,7 @@ language: bash
 
 sudo: required
 
-install: travis_wait mvn install
-
-script: bash test.sh
+script: travis_wait bash test.sh
 
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
