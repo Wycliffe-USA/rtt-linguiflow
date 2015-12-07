@@ -2,7 +2,10 @@ language: bash
 
 sudo: required
 
-script: travis_wait bash test.sh
+script: 
+    - bash bootstrap.sh
+    - bash getcorpora.sh
+    - travis_wait bash tokenize.sh
 
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
