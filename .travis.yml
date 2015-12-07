@@ -3,9 +3,9 @@ language: bash
 sudo: required
 
 script: 
-    - bash bootstrap.sh
-    - bash getcorpora.sh
-    - travis_wait bash tokenize.sh
+    - bash ./mgiza/bootstrap.sh
+    - bash ./mgiza/getcorpora.sh
+    - travis_wait bash ./mgiza/tokenize.sh
 
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
