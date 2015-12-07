@@ -2,6 +2,8 @@ language: bash
 
 sudo: required
 
+install: travis_wait mvn install
+
 script: bash test.sh
 
 notifications:
