@@ -3,3 +3,6 @@ language: bash
 sudo: required
 
 script: bash test.sh
+
+notifications:
+  slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
