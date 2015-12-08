@@ -27,6 +27,3 @@ cd /home/vagrant/tools
 wget http://www.statmt.org/europarl/v5/tools.tgz && tar -xf ./tools.tgz
 rm -f ./tools.tgz
 cd /home/vagrant/tools
-
-#Make our own scripts executable
-chmod +x ./*.sh
