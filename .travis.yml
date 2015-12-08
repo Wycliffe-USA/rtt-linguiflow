@@ -5,7 +5,6 @@ sudo: required
 script: 
     - sudo bash ./mgiza/bootstrap.sh
     - sudo bash ./mgiza/getcorpora.sh
-    - travis_wait sudo bash ./mgiza/tokenize.sh
 
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
