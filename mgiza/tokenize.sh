@@ -2,7 +2,7 @@
 #tokenize.sh
 INSTALL_HOME=$1
 if [ -z "${INSTALL_HOME}" ]; then
-    echo "USAGE: ./tokenize.sh app_root username"
+    echo "USAGE: ./tokenize.sh app_root"
     echo "Example: ./tokenize.sh ${HOME}"
     exit 1
 fi
