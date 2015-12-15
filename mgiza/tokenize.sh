@@ -1,7 +1,13 @@
 #!/bin/bash
 #tokenize.sh
-APPROOT=/home/vagrant/tools
-CORPORADIR=/home/vagrant/corpora
+INSTALL_HOME=$1
+if [ -z "${INSTALL_HOME}" ]; then
+    echo "USAGE: ./tokenize.sh app_root username"
+    echo "Example: ./tokenize.sh ${HOME}"
+    exit 1
+fi
+APPROOT=${INSTALL_HOME}/tools
+CORPORADIR=${INSTALL_HOME}/corpora
 echo "Running tokenizer..."
 perl ${APPROOT}/europarl/tools/tokenizer.perl -l en < ${CORPORADIR}/europarl-v7.de-en.en > ${CORPORADIR}/en_tokenized.src
 perl ${APPROOT}/europarl/tools/tokenizer.perl -l de < ${CORPORADIR}/europarl-v7.de-en.de > ${CORPORADIR}/de_tokenized.trg
