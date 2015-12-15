@@ -25,4 +25,6 @@ echo "Converting from plain format to snt for MGiza to work with."
 cd ${CORPORADIR}
 ${APPROOT}/bin/training-tools/mgizapp/plain2snt ${CORPORADIR}/03_en_classified.src ${CORPORADIR}/03_de_classified.trg
 echo "Done."
-ls -lahrt
+echo "Creating a cooccurrence because I don't know why I just do what Fabio tells me to do"
+${APPROOT}/bin/training-tools/mgizapp/snt2cooc ${CORPORADIR}/04_de_en.cooc ${CORPORADIR}/03_de_classified.trg.vcb ${CORPORADIR}/03_en_classified.src.vcb ${CORPORADIR}/03_en_classified.src_03_de_classified.trg.snt
+echo "Done, hopefully."
