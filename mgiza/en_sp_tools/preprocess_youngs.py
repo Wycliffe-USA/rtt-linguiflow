@@ -7,7 +7,9 @@ import sys
 import re
 from tempfile import mkstemp
 from shutil import move
-
+OT_ORDER = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"]
+NT_ORDER = ["Matthew","Mark","Luke","John",'Acts','Romans','1 Corinthians','2 Corinthians','Galatians','Ephesians','Philippians','Colossians','1 Thessalonians','2 Thessalonians','1 Timothy','2 Timothy','Titus','Philemon','Hebrews',"James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"]
+BIBLE_ORDER = OT_ORDER + NT_ORDER
 def get_files(docroot):
     files = []
     for dirpath, dirnames, filenames in os.walk(docroot):
@@ -43,3 +45,4 @@ def main(docroot):
 if __name__ == "__main__":
         docroot = sys.argv[1]
         main(docroot)
+
