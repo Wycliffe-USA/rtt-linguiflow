@@ -1,8 +1,10 @@
 language: bash
+dist: trusty
+sudo: required
 
 before_install:
-    - apt-get update -q
-    - apt-get install -y git make build-essential clang libboost-all-dev cmake unzip python-pip python-scipy
+    - sudo apt-get update -q
+    - sudo apt-get install -y git make build-essential clang libboost-all-dev cmake unzip python-pip python-scipy
 
 script: 
     - sudo bash ./test.sh
