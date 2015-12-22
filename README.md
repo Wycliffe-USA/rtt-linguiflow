@@ -1,7 +1,10 @@
 # Wycliffe@Urbana15: #Hacktranslation
+
+We aim to bring the power of natural language processing (NLP) to bear on the work of Bible translation.
+
 Production:     [![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=master)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015)      
 Development:    [![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=development)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015)
-We aim to bring the power of natural language processing (NLP) to bear on the work of Bible translation.
+
 
 ## The problem
 
