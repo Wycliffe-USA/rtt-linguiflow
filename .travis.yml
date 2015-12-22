@@ -1,10 +1,11 @@
 language: bash
 
-sudo: required
+before_install:
+    - apt-get update -q
+    - apt-get install -y git make build-essential clang libboost-all-dev cmake unzip python-pip python-scipy
 
 script: 
-    - sudo bash ./mgiza/bootstrap.sh
-    - sudo bash ./mgiza/getcorpora.sh
+    - sudo bash ./test.sh
 
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
