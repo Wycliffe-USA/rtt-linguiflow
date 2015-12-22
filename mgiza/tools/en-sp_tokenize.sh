@@ -1,9 +1,10 @@
 #!/bin/bash
 #tokenize.sh
 INSTALL_HOME=$1
-if [ -z "${INSTALL_HOME}" ]; then
-    echo "USAGE: ./tokenize.sh app_root"
-    echo "Example: ./tokenize.sh ${HOME}"
+CONFIGFILE=$2
+if [ -z "${INSTALL_HOME}" ] | [ -z "${CONFIGFILE}" ]; then
+    echo "USAGE: ./tokenize.sh APPROOT CONFIGFILE"
+    echo "Example: ./tokenize.sh ${HOME} ${CONFIGFILE}"
     exit 1
 fi
 APPROOT=${INSTALL_HOME}/tools
@@ -25,6 +26,7 @@ echo "Converting from plain format to snt for MGiza to work with."
 cd ${CORPORADIR}
 ${APPROOT}/bin/training-tools/mgizapp/plain2snt ${CORPORADIR}/processed/03_asv_classified.src ${CORPORADIR}/processed/03_spanish_classified.trg
 echo "Done."
-echo "Creating a cooccurrence because I don't know why I just do what Fabio tells me to do"
+echo "Creating a cooccurrence..."
 ${APPROOT}/bin/training-tools/mgizapp/snt2cooc ${CORPORADIR}/processed/04_en_sp.cooc ${CORPORADIR}/processed/03_spanish_classified.trg.vcb ${CORPORADIR}/processed/03_asv_classified.src.vcb ${CORPORADIR}/processed/03_asv_classified.src_03_spanish_classified.trg.snt
 echo "Done, hopefully."
+${APPROOT}/bin/training-tools/mgizapp/mgiza ${CONFIGFILE}
