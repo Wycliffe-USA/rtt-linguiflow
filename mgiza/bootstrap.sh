@@ -12,7 +12,8 @@ fi
 apt-get update && apt-get install -y git make build-essential clang libboost-all-dev cmake unzip
 
 #Install gensim/NLTK prereqs
-apt-get install -y python-pip python-scipy
+pip install -U numpy
+pip install -U scipy
 pip install -U nltk
 pip install -U gensim
 python -m nltk.downloader punkt

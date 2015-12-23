@@ -4,10 +4,16 @@ sudo: required
 
 before_install:
     - sudo apt-get update -q
-    - sudo apt-get install -y git make build-essential clang libboost-all-dev cmake unzip python-pip python-scipy
+    - sudo apt-get install -y git make build-essential clang libboost-all-dev cmake unzip libblas-dev liblapack-dev libatlas-base-dev gfortran
+    - sudo pip install -U nltk
+    - sudo pip install -U numpy
+    - sudo pip install -U scipy
+    - sudo pip install -U gensim
 
 script: 
-    - sudo bash ./test.sh
-
+    - bash ./mgiza/tests/prerequisites.sh
+    - bash ./mgiza/tests/unbound2plain.sh
+    - bash ./mgiza/tests/my_tokenizer.sh
+    - bash ./mgiza/tests/train.sh
 notifications:
   slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
