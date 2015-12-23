@@ -28,5 +28,6 @@ ${APPROOT}/bin/training-tools/mgizapp/plain2snt ${CORPORADIR}/processed/03_asv_c
 echo "Done."
 echo "Creating a cooccurrence..."
 ${APPROOT}/bin/training-tools/mgizapp/snt2cooc ${CORPORADIR}/processed/04_en_sp.cooc ${CORPORADIR}/processed/03_spanish_classified.trg.vcb ${CORPORADIR}/processed/03_asv_classified.src.vcb ${CORPORADIR}/processed/03_asv_classified.src_03_spanish_classified.trg.snt
-echo "Done, hopefully."
+echo "Done."
+echo "Aligning words..."
 ${APPROOT}/bin/training-tools/mgizapp/mgiza ${CONFIGFILE}
