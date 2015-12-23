@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Enhanced Rapid Word Collection Development Environment
+# Rapid Translation Toolkitor Development Environment
 # Copyright (C) 2015  Wycliffe Bible Translators
 
 # This program is free software; you can redistribute it and/or modify
@@ -24,10 +24,11 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.name = "mgiza"
+    v.cpus = 1
   end
-  config.vm.provision "shell", inline: "mkdir /home/vagrant/tools && chown vagrant:vagrant /home/vagrant/tools"
-  config.vm.provision "file", source: "getcorpora.sh", destination: "/home/vagrant/tools/getcorpora.sh"
-  config.vm.provision "file", source: "tokenize.sh", destination: "/home/vagrant/tools/tokenize.sh"
-  config.vm.provision "file", source: "mgiza_configfile", destination: "/home/vagrant/tools/mgiza_configfile"
-  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.synced_folder "tools/", "/home/vagrant/tools"
+  config.vm.provision "shell" do |s|
+    s.path = "bootstrap.sh"
+    s.args = ["/home/vagrant","vagrant"]
+  end
 end

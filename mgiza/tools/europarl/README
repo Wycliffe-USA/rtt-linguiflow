@@ -1,0 +1,58 @@
+Europarl Release v3 -- Sept 27, 2007
+===================================
+
+This is a parallel corpus that was extracted from the
+European Parliament web site by Philipp Koehn (University 
+of Edinburgh). It is faily big, 40 million words per 
+language, and its main intended use is to aid 
+statistical machine translation research.
+
+More information can be found at
+	http://www.statmt.org/europarl/
+
+The main difference in this release vs. the first release
+in 2002 and second release in 2003 is that it is larger 
+and it comes with improved processing tools that allow 
+the creation of parallel corpora between any two of the 
+11 languages.
+
+Some data is now tagged with the original language the text
+was spoken in.
+
+Sentence aligner
+----------------
+You can create any parallel corpus with the command
+
+	./sentence-align-corpus.perl L1 L2
+
+where L1 and L2 can be any of the 11 languages
+	da de el en es fi fr it nl pt sv
+
+The output is stored in the aligned/ directory.
+
+NOTE: To use this corpus with tools like Giza++, you want to
+- lowercase the text (recommended)
+- strip empty lines and their correspondences (recommended)
+- tokenize words and punctuation (recommended)
+- remove lines with XML-Tags (starting with "<") (required) 
+
+The sentence aligner uses the split-sentences.perl script, 
+which does and sentence splitting. You may want to 
+use your own preprocessor. This requires changing an 
+obvious line in the sentence aligner code. A tokenizer.perl
+script is included as well.
+
+Source
+------
+http://www3.europarl.eu.int/omk/omnsapir.so/calendar?APP=CRE&LANGUE=EN
+
+Copyright in the Europarl service
+(c) European Communities
+Except where otherwise indicated, reproduction is authorised,
+provided that the source is acknowledged. 
+
+Change Log
+----------
+Preprocessing is improved.
+This release covers 9/1996 - 10/2006.
+Includes sentence aligner and tokenizer.

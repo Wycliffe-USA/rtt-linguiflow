@@ -1,6 +1,19 @@
-install:
-  - sudo apt-get update -q
-  - sudo apt-get install -q virtualbox --fix-missing
-  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
-  - sudo dpkg -i vagrant_1.7.2_x86_64.deb
-  - bundle install
+language: bash
+dist: trusty
+sudo: required
+
+before_install:
+    - sudo apt-get update -q
+    - sudo apt-get install -y git make build-essential clang libboost-all-dev cmake unzip libblas-dev liblapack-dev libatlas-base-dev gfortran
+    - sudo pip install -U nltk
+    - sudo pip install -U numpy
+    - sudo pip install -U scipy
+    - sudo pip install -U gensim
+
+script: 
+    - bash ./mgiza/tests/prerequisites.sh
+    - bash ./mgiza/tests/unbound2plain.sh
+    - bash ./mgiza/tests/my_tokenizer.sh
+    - bash ./mgiza/tests/train.sh
+notifications:
+  slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
