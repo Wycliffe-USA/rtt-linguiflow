@@ -1,8 +1,8 @@
 adbackoff 0
 compactadtable 1
 compactalignmentformat 0
-coocurrencefile /home/vagrant/corpora/processed/04_en_sp.cooc
-corpusfile /home/vagrant/corpora/processed/03_asv_classified.src_03_spanish_classified.trg.snt
+coocurrencefile /home/vagrant/corpora/processed/asv_spanish.cooc
+corpusfile /home/vagrant/corpora/processed/asv_spanish.snt
 countcutoff 1e-06
 countcutoffal 1e-05
 countincreasecutoff 1e-06
@@ -84,13 +84,13 @@ probcutoff 1e-07
 probsmooth 1e-07
 readtableprefix
 restart 0
-sourcevocabularyfile /home/vagrant/corpora/processed/03_asv_classified.src.vcb
+sourcevocabularyfile /home/vagrant/corpora/processed/asv.vcb
 t1 1
 t2 0
 t2to3 0
 t3 0
 t345 0
-targetvocabularyfile /home/vagrant/corpora/processed/03_spanish_classified.trg.vcb
+targetvocabularyfile /home/vagrant/corpora/processed/spanish.vcb
 tc
 testcorpusfile
 th 0
