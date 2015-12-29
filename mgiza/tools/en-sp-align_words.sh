@@ -21,8 +21,8 @@ python ${APPROOT}/my_tokenizer.py ${CORPORADIR}/processed/01_spanish_plain.txt $
 echo "Done."
 echo "Making classes (this part takes a while...)"
 echo "10 rounds..."
-${APPROOT}/bin/training-tools/mgizapp/mkcls -n10 -p${CORPORADIR}/processed/02_asv_tokenized.txt -V${CORPORADIR}/processed/03_asv_classified.src
-${APPROOT}/bin/training-tools/mgizapp/mkcls -n10 -p${CORPORADIR}/processed/02_spanish_tokenized.txt -V/${CORPORADIR}/processed/03_spanish_classified.trg
+${APPROOT}/bin/training-tools/mgizapp/mkcls -n10 -p${CORPORADIR}/processed/02_asv_tokenized.txt -V${CORPORADIR}/processed/03_asv_classified.src.vcb.classes
+${APPROOT}/bin/training-tools/mgizapp/mkcls -n10 -p${CORPORADIR}/processed/02_spanish_tokenized.txt -V${CORPORADIR}/processed/03_spanish_classified.trg.vcb.classes
 echo "Done"
 echo "Converting from plain format to snt for MGiza to work with."
 cd ${CORPORADIR}
