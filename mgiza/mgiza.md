@@ -9,14 +9,26 @@ I have also included the Python NLTK library on this, as I will try to do on all
 vagrant ssh
 ``` 
 
+First, ensure that `pip`, `nltk` and `punkt` are installed. If not, you can do this using the following commands:
+
+```
+sudo apt-get install python-pip
+sudo pip install nltk
+python -m nltk.downloader punkt
+```
+
 Then
 
 ```
 cd ./tools
-echo "This is the part that takes a while"; ./getcorpora.sh && tokenize.sh
+chmod +x *.sh
+export INSTALL_HOME=/home/vagrant
+echo "This is the part that takes a while"; ./getcorpora.sh $INSTALL_HOME && ./en-sp-align_words.sh $INSTALL_HOME /home/vagrant/tools/mgiza_configfile
 ```
 
 Wait. A long time. 
+
+Once the script finishes running, you should be able to view the results in the corpora directory, under a filename similar to "src_trg.dict.A3.final.part000"
 
 ## Using the MGIZA vagrant machine
 
@@ -50,7 +62,7 @@ drwxr-xr-x 3  353500   10000 4096 Jul 25  2008 europarl/
 -rwxrwxr-x 1 vagrant vagrant  913 Nov 23 15:29 tokenize.sh*
 ```
 
-`getcorpora.sh` will fetch the Europarl English-German parallel text and `tokenize.sh` will tokenize, transform, and run a mgiza's text classification on it. That part takes a while, so be patient. Also, a while means, "I let it run for six hours on 1024MB of memory and a single core and it didn't finish."
+`getcorpora.sh` will fetch the Europarl English-German parallel text and `en-sp-align_words.sh` will tokenize, transform, and run a mgiza's text classification on it. That part takes a while, so be patient. Also, a while means, "I let it run for six hours on 1024MB of memory and a single core and it didn't finish."
 
 Update: Running this on a DigitalOcean droplet with 2 GB of memory, here is the time it took:
 
@@ -61,4 +73,4 @@ sys     0m10.712s
 ```
 
 
-If you're curious as to how they're doing it, crack open the scripts and take a look. I won't tell anyone. `tokenize.sh` is mostly based on the work from [this blog](https://fabioticconi.wordpress.com/2011/01/17/how-to-do-a-word-alignment-with-giza-or-mgiza-from-parallel-corpus/). 
+If you're curious as to how they're doing it, crack open the scripts and take a look. I won't tell anyone. `en-sp-align_words.sh` is mostly based on the work from [this blog](https://fabioticconi.wordpress.com/2011/01/17/how-to-do-a-word-alignment-with-giza-or-mgiza-from-parallel-corpus/). 
