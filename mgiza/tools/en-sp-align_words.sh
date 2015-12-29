@@ -9,6 +9,8 @@ if [ -z "${INSTALL_HOME}" ] | [ -z "${CONFIGFILE}" ]; then
 fi
 APPROOT=${INSTALL_HOME}/tools
 CORPORADIR=${INSTALL_HOME}/corpora
+#Ensure correct nltk lib is installed
+python -m nltk.downloader punkt
 mkdir ${CORPORADIR}/processed
 echo "Converting from Unbound format to plain string..."
 python ${APPROOT}/unbound2plain.py ${CORPORADIR}/asv/asv_utf8.txt ${CORPORADIR}/processed/01_asv_plain.txt
