@@ -1,0 +1,22 @@
+/* Colors:
+ * #009ca6 blue
+ * #aa1e2c red
+ * #f4be18 gold
+ */
+
+.text-row {
+  margin-bottom: 10px;
+}
+
+.lang-select {
+  color: #eee;
+  background-color: #009ca6; /* blue */
+  margin: 5px 0;
+  border: none;
+}
+
+#translate-button {
+  color: #000;
+  background-color: #f4be18; /* gold */
+  border: none;
+}
