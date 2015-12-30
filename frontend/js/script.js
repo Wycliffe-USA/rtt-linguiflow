@@ -55,7 +55,7 @@ function getResults(input){
       world: 2
     }
 
-    var translations = ["hola", "mundo"];
+    var translations = ["todas", "las", "naciones"];
 
     var results = {
         mapping: temp,
@@ -83,22 +83,26 @@ function updateText(results){
     console.log(word);
           var options = '<select class="word-choice form-control">' +
                             '<option>' + word + '  90%</option>' +
-                            '<option>mundial 15%</option>' +
-                            '<option>del mundo 10%</option>' +
-                            '<option>el mundo 1%</option>'
+                            '<option>las naciones 15%</option>' +
+                            '<option>de naciones 10%</option>' +
+                            '<option>los paises 1%</option>'
                           '</select>'
     var originalWord = $(this).html();
     $(this).replaceWith(options);
     if($(this).context.id == 0){
           $('#source-text').highlightTextarea({
-          words: ['hello']
+          words: ['all']
           });
         }
-        else{
+        else if($(this).context.id == 1){
           $('#source-text').highlightTextarea({
-            words: ['world']
+            words: ['the']
           });
-        }   
+        } else { 
+          $('#source-text').highlightTextarea({
+            words: ['nations']
+          });
+        }
   });
 
 
