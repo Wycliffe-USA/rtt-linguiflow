@@ -1,0 +1,5 @@
+bower_components/
+logs/
+node_modules/
+public/javascript/templates.js
+
