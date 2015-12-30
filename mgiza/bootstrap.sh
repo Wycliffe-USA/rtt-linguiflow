@@ -17,7 +17,6 @@ apt-get update && apt-get install -y unzip python-pip
 #pip install -U scipy
 pip install -U nltk
 #pip install -U gensim
-python -m nltk.downloader punkt
 
 # #Compile mgiza
 # mkdir /mgiza && cd /mgiza
