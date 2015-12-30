@@ -26,3 +26,19 @@
   height: 75px;
   background-color: #ffffff;
 }
+
+#main-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin: 0px !important;
+  width: 100% !important;
+}
+
+.banner-image {
+  background-image: url('../images/wycliffeImage.png');
+  background-size:cover;
+  width: 100% !important;
+  height: 200px;
+  margin: 0px !important;
+}
+
