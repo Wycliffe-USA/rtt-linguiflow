@@ -75,10 +75,10 @@ function updateText(results){
     console.log('word');
     console.log(word);
           var options = '<select class="word-choice form-control">' +
-                            '<option>' + word + '</option>' +
-                            '<option>mundial</option>' +
-                            '<option>del mundo</option>' +
-                            '<option>el mundo</option>'
+                            '<option>' + word + '  90%</option>' +
+                            '<option>mundial 15%</option>' +
+                            '<option>del mundo 10%</option>' +
+                            '<option>el mundo 1%</option>'
                           '</select>'
     var originalWord = $(this).html();
     $(this).replaceWith(options);
