@@ -24,6 +24,8 @@ body {
   width: 100% !important;
   height: 200px;
   margin: 0 !important;
+  border-bottom: 2px solid #333;
+  border-top: 2px solid #333;
 }
 
 #main-container {
@@ -65,11 +67,15 @@ body {
 
 #translate-button {
   background-color: #f5bb23; /* gold */
-  border: none;
+  border: 1px solid #AAA;
   border-radius: 5px;
   color: #000;
   display: block;
   float: right;
   margin: 5px 0 5px 100%;
   padding: 5px 15px;
+}
+
+#translate-button:hover {
+    background-color: #ffd240;
 }
