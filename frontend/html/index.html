@@ -10,6 +10,9 @@
 
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 
+  <!-- JQuery google CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
@@ -35,12 +38,13 @@
           <option value="fr">French</option>
           <option value="cn">Chinese</option>
         </select>
-        <form>
-          <p id="target-text" class="form-control"></p>
-        </form>
+        <div id="target-text">
+        </div>
       </div>
     </div>
   <button id="translate-button" type="button">Translate</button>
   </div>
+  <script src="../js/script.js"></script>
+
 </body>
 </html>
