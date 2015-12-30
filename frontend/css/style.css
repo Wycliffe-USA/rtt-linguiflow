@@ -13,9 +13,22 @@ body {
 }
 
 #header {
-  width: 100%;
+  background-color: #fcfcfb;  
   height: 75px;
-  background-color: #fcfcfb;
+  width: 100%;
+}
+
+.banner-image {
+  background-image: url('../images/wycliffeImage.png');
+  background-size: cover;
+  width: 100% !important;
+  height: 200px;
+  margin: 0 !important;
+}
+
+#main-container {
+  margin: 15px 5px;
+  width: 100% !important;
 }
 
 .text-row {
@@ -23,52 +36,37 @@ body {
 }
 
 .lang-select {
-  color: #eee;
   background-color: #039da6; /* blue */
-  margin: 5px 0;
   border: none;
   border-radius: 5px;
+  color: #eee;
+  margin: 5px 0;
+  padding: 5px 10px;
 }
 
 #source-text {
   font-size: 32px;
   resize: none;
+  margin: 5px 0;
+  padding: 5px 15px;
 }
 
 #target-text {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
   font-size: 32px;
   font-weight: bold;
+  margin: 5px 0;
+  padding: 5px 15px;
 }
 
 #translate-button {
-  display: block;
-  float: right;
-  color: #000;
   background-color: #f5bb23; /* gold */
   border: none;
   border-radius: 5px;
+  color: #000;
+  display: block;
+  float: right;
   margin: 5px 0 5px 100%;
-  clear: both;
+  padding: 5px 15px;
 }
-
-#header {
-  width: 100%;
-  height: 75px;
-  background-color: #ffffff;
-}
-
-#main-container {
-  margin-left: 0px;
-  margin-right: 0px;
-  margin: 0px !important;
-  width: 100% !important;
-}
-
-.banner-image {
-  background-image: url('../images/wycliffeImage.png');
-  background-size:cover;
-  width: 100% !important;
-  height: 200px;
-  margin: 0px !important;
-}
-
