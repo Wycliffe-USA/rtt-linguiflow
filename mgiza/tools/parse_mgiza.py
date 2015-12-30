@@ -1,4 +1,6 @@
 import re
+import sys
+import json
 
 fname = 'sample_out'
 
@@ -140,6 +142,18 @@ def parse_output(mgiza_file):
 
         return database
 
+def print_to_file(val, filename):
+    with open(filename, 'w') as f:
+        f.write(val)
+
+
 if __name__ == '__main__':
-    database = parse_output(fname)
-    print str(database)
+    if len(sys.argv) < 3:
+        raise Exception("Usage: parse_mgiza mgiza_file output_file")
+    database = parse_output(sys.argv[1])
+    jsonified = json.dumps(database.mapping)
+    print ''
+    print jsonified
+    print_to_file(jsonified, sys.argv[2])
+
+
