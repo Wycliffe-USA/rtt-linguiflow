@@ -1,70 +1,15 @@
-# encoding: utf-8
-# This file originally created at http://rove.io/18708c5aacba63c841e31664aebac003
-
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-Vagrant.configure("2") do |config|
-
-  config.vm.box = "opscode-ubuntu-12.04_chef-11.4.0"
-  config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.0.box"
-  config.vm.synced_folder "data/", "/home/vagrant/data"
-  config.ssh.forward_agent = true
-
-
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["cookbooks"]
-    chef.add_recipe :apt
-    chef.add_recipe 'nginx'
-    chef.add_recipe 'vim'
-    chef.add_recipe 'git'
-    chef.add_recipe 'postgresql::server'
-    chef.add_recipe 'nodejs'
-    chef.json = {
-      :nginx      => {
-        :dir                => "/etc/nginx",
-        :log_dir            => "/var/log/nginx",
-        :binary             => "/usr/sbin/nginx",
-        :user               => "www-data",
-        :init_style         => "runit",
-        :pid                => "/var/run/nginx.pid",
-        :worker_connections => "1024"
-      },
-      :git        => {
-        :prefix => "/usr/local"
-      },
-      :postgresql => {
-        :config   => {
-          :listen_addresses => "*",
-          :port             => "5432"
-        },
-        :pg_hba   => [
-          {
-            :type   => "local",
-            :db     => "postgres",
-            :user   => "postgres",
-            :addr   => nil,
-            :method => "trust"
-          },
-          {
-            :type   => "host",
-            :db     => "all",
-            :user   => "all",
-            :addr   => "0.0.0.0/0",
-            :method => "md5"
-          },
-          {
-            :type   => "host",
-            :db     => "all",
-            :user   => "all",
-            :addr   => "::1/0",
-            :method => "md5"
-          }
-        ],
-        :password => {
-          :postgres => "hacktranslation"
-        }
-      }
-    }
-  end
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.synced_folder ".", "/var/www/project"
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y g++ nginx postgresql-9.4
+    curl -sL https://deb.nodesource.com/setup_0.12 | sh
+    apt-get install -y nodejs
+    su vagrant
+    mkdir /home/vagrant/node_modules
+    cd /var/www/project
+    ln -s /home/vagrant/node_modules/ node_modules
+    npm install bower
+  SHELL
 end
