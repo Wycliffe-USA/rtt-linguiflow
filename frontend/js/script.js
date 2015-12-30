@@ -1,24 +1,8 @@
 $(function() {
 
-
-    // wrap words in spans
-    $('p').each(function(index) {
-        var $this = $(this);
-        $this.html($this.text().replace(/\b(\w+)\b/g, "<span id="+index+">$1</span>"));
-    });
-
-
-
     // Create an object that holds the mappings
     var results = getResults("Some text");
 
-    console.log(results);
-
-    // bind to each span
-    $('p span').hover(
-        function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
-        function() { $('#word').text(''); $(this).css('background-color',''); }
-    );
 });
 
 // Returns Object with input mapping and translation
@@ -60,9 +44,23 @@ function getResults(targetLanguage, inputText){
   // ===================================
   }
 
+
+
 function updateText(results){
   $.each(results.translation, function( index, value ) {
     console.log(value);
-    $("#target-text").append("<span id = " + index + ">" + value + "</span>");
+    $("#target-text").append("<span id = " + index + ">" + value + " </span>");
   });
+
+  // bind to each span
+  $('span').hover(
+    function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
+    function() { $('#word').text(''); $(this).css('background-color',''); }
+
+  );
 }
+
+
+
+
+
