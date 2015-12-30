@@ -15,7 +15,7 @@ body {
 #header {
   width: 100%;
   height: 75px;
-  background-color: #ffffff;
+  background-color: #fcfcfb;
 }
 
 .text-row {
@@ -50,4 +50,3 @@ body {
   margin: 5px 0 5px 100%;
   clear: both;
 }
-
