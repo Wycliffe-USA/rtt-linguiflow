@@ -6,15 +6,13 @@ import argparse
 
 def tok_words(infile,outfile):
     with open(infile, 'r') as f:
-        text = f.read()
-        text = text.lower()
-        print "Found %d words..." % len(text.split(" "))
-        text = text.decode('utf8')
-        tokens = nltk.word_tokenize(text)
-        print "Found %d tokens..." % (len(tokens))
-    tokens = " ".join(tokens)
-    with open(outfile, 'w') as f:
-        f.write(tokens.encode("utf8"))
+      with open(outfile, 'w') as out_f:
+          for line in f:
+              line = line.lower()
+              line = line.decode('utf8')
+              tokens = nltk.word_tokenize(line)
+              output_text = " ".join(tokens) + "\n"
+              out_f.write(output_text.encode("utf8"))
     return
 
 def main(infile,outfile):
