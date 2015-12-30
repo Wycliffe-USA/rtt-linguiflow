@@ -39,12 +39,16 @@ body {
   font-size: 32px;
   resize: none;
   margin: 5px 0;
+  padding: 5px 15px;
 }
 
 #target-text {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
   font-size: 32px;
   font-weight: bold;
   margin: 5px 0;
+  padding: 5px 15px;
 }
 
 #translate-button {
