@@ -19,7 +19,9 @@
 
 <body>
 
-  <div id="header"></div>
+  <div id="header">
+    <img src="../images/wycliffelogo.jpg" alt="Wycliffe Logo" .img-responsive>
+  </div>
 
   <div id="main-container" class="container">
     <div class="row text-row">
@@ -31,8 +33,9 @@
           <option value="cn">Chinese</option>
         </select>
         <form>
-          <textarea id="source-text" class="form-control"></textarea>
+          <textarea id="source-text" class="form-control" rows="1"></textarea>
         </form>
+        <button id="translate-button" type="button">Translate</button>
       </div>
       <div id="target-container" class="col-sm-6">
         <select id="target-lang" class="lang-select">
@@ -45,7 +48,6 @@
         </div>
       </div>
     </div>
-  <button id="translate-button" type="button">Translate</button>
   </div>
   <script src="../js/script.js"></script>
 
