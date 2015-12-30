@@ -1,0 +1,18 @@
+# Sentence pair (1) source length 2 target length 2 alignment score : 0.0443642
+. 4 
+NULL ({ }) . ({ 1 2 }) 6 ({ }) 
+# Sentence pair (2) source length 2 target length 2 alignment score : 0.159366
+dios 5 
+NULL ({ }) god ({ 1 2 }) 7 ({ }) 
+# Sentence pair (3) source length 2 target length 2 alignment score : 0.159366
+en 6 
+NULL ({ }) in ({ 1 2 }) 8 ({ }) 
+# Sentence pair (4) source length 2 target length 2 alignment score : 0.159366
+luz 7 
+NULL ({ }) light ({ 1 2 }) 3 ({ }) 
+# Sentence pair (5) source length 2 target length 2 alignment score : 0.159366
+vió 8 
+NULL ({ }) saw ({ 1 2 }) 4 ({ }) 
+# Sentence pair (6) source length 2 target length 2 alignment score : 0.159366
+y 9 
+NULL ({ }) and ({ 1 2 }) 5 ({ }) 
