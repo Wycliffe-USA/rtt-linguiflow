@@ -2,6 +2,31 @@ import re
 
 fname = 'sample_out'
 
+class Database(object):
+    def __init__(self):
+        self.mapping = {}
+
+    def add(self, new_map, score):
+        for key in new_map:
+            words = new_map[key]
+
+            if words == None:
+                continue
+
+            if key not in self.mapping:
+                self.mapping[key] = {}
+
+            count_dict = self.mapping[key]
+
+            for word in words:
+                if word not in count_dict:
+                    count_dict[word] = 1
+                else:
+                    count_dict[word] += 1
+
+    def __str__(self):
+        return str(self.mapping)
+
 def parse_alignment(alignment):
     raw_lines = alignment.split('\n')
     lines = remake_lines(raw_lines)
@@ -26,11 +51,12 @@ def parse_alignment(alignment):
     # Create mapping
     mapping = create_mapping(words_src, words_targ, indexes)
 
-    print "\tScore:", score
-    print "\tSource Words:", words_src
-    print "\tTarget Words:", words_targ
-    print "\tIndexes:", indexes
-    print "\tMapping:", mapping
+    #print "\tScore:", score
+    #print "\tSource Words:", words_src
+    #print "\tTarget Words:", words_targ
+    #print "\tIndexes:", indexes
+    #print "\tMapping:", mapping
+    return mapping, score
 
 # Extracts the score from the line
 def get_score(line):
@@ -73,6 +99,7 @@ def get_words(words_raw):
 def create_mapping(source, target, indexes):
     mapping = {}
     for word, inds in zip(source, indexes):
+        # - 1 is because indexes are 1 indexed
         vals = [ target[i-1] for i in inds ]
         mapping[word] = vals if len(vals) > 0 else None
 
@@ -103,13 +130,16 @@ def parse_output(mgiza_file):
     []
     """
     with open(mgiza_file, 'r') as f:
-        results = []
+        database = Database()
         for alignment in f.read().split('#'):
             if alignment:
                 # print 'Parsing Alignment:'
                 # print alignment
-                results.append(parse_alignment(alignment))
-        return results
+                mapping, score = parse_alignment(alignment)
+                database.add(mapping, score)
+
+        return database
 
 if __name__ == '__main__':
-    parse_output(fname)
+    database = parse_output(fname)
+    print str(database)
