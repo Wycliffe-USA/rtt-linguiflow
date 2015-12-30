@@ -34,7 +34,10 @@ body {
 .text-row {
   margin-bottom: 10px;
 }
-
+.word-choice {
+    width: 75px;
+    display: inline;
+}
 .lang-select {
   background-color: #039da6; /* blue */
   border: none;

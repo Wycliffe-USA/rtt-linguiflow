@@ -8,7 +8,6 @@ $(function() {
     });
 
 
-
     // Create an object that holds the mappings
     var results = getResults("Some text");
 
@@ -19,6 +18,23 @@ $(function() {
         function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
         function() { $('#word').text(''); $(this).css('background-color',''); }
     );
+	    // click events for word choices
+    $('#target-text span').click(function() {
+	var word = $(this).text();
+	console.log('word');
+	console.log(word);
+        var options = '<select class="word-choice form-control">' +
+                          '<option>' + word + '</option>' +
+                          '<option>Que pasa</option>' +
+                          '<option>bueno</option>' +
+                          '<option>si</option>' +
+                          '<option>diga</option>' +
+                          '<option>Que hay</option>' +
+                        '</select>'
+	var originalWord = $(this).html();
+	$(this).replaceWith(options);
+	});
+
 });
 
 // Returns Object with input mapping and translation
