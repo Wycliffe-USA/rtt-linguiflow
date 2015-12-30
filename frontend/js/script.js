@@ -1,6 +1,13 @@
 $(function() {
 
-    document.getElementById("translate-button").onclick = translate;
+  document.getElementById("translate-button").onclick = translate;
+
+  $("#source-text").keypress(function (e) {
+    if(e.which == 13) {
+      translate();
+      e.preventDefault();
+    }
+  });
 
 });
 
@@ -105,8 +112,3 @@ function updateText(results){
 
   );
 }
-
-
-
-
-
