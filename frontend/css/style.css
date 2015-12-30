@@ -20,3 +20,9 @@
   background-color: #f4be18; /* gold */
   border: none;
 }
+
+#header {
+  width: 100%;
+  height: 75px;
+  background-color: #ffffff;
+}
