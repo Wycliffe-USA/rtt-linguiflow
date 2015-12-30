@@ -23,10 +23,14 @@ def parse_alignment(alignment):
 
     words_targ = get_words(lines[1].split())
 
+    # Create mapping
+    mapping = create_mapping(words_src, words_targ, indexes)
+
     print "\tScore:", score
     print "\tSource Words:", words_src
     print "\tTarget Words:", words_targ
     print "\tIndexes:", indexes
+    print "\tMapping:", mapping
 
 # Extracts the score from the line
 def get_score(line):
@@ -64,6 +68,15 @@ def get_words_raw(line):
 def get_words(words_raw):
     words = [ w.strip() for w in words_raw ]
     return words
+
+# Creates a mapping from source words to target words
+def create_mapping(source, target, indexes):
+    mapping = {}
+    for word, inds in zip(source, indexes):
+        vals = [ target[i-1] for i in inds ]
+        mapping[word] = vals if len(vals) > 0 else None
+
+    return mapping
 
 
 # Make it so that all of the target string is on one line
