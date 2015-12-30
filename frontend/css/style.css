@@ -18,8 +18,17 @@ body {
   width: 100%;
 }
 
+.banner-image {
+  background-image: url('../images/wycliffeImage.png');
+  background-size: cover;
+  width: 100% !important;
+  height: 200px;
+  margin: 0 !important;
+}
+
 #main-container {
   margin: 15px 5px;
+  width: 100% !important;
 }
 
 .text-row {
@@ -61,25 +70,3 @@ body {
   margin: 5px 0 5px 100%;
   padding: 5px 15px;
 }
-
-#header {
-  width: 100%;
-  height: 75px;
-  background-color: #ffffff;
-}
-
-#main-container {
-  margin-left: 0px;
-  margin-right: 0px;
-  margin: 0px !important;
-  width: 100% !important;
-}
-
-.banner-image {
-  background-image: url('../images/wycliffeImage.png');
-  background-size:cover;
-  width: 100% !important;
-  height: 200px;
-  margin: 0px !important;
-}
-
