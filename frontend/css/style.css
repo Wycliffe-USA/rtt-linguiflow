@@ -14,7 +14,6 @@ body {
 
 #header {
   background-color: #fcfcfb;  
-  height: 75px;
   width: 100%;
 }
 
@@ -78,4 +77,14 @@ body {
 
 #translate-button:hover {
     background-color: #ffd240;
+}
+
+#lingui-img {
+    height: 70px;
+    margin: 20px;
+}
+
+#wycliffe-img {
+    float: right;
+    margin: 20px;
 }
