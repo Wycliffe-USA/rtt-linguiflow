@@ -10,11 +10,14 @@ def parse_alignment(alignment):
     print lines[1]
     print lines[2]
 
+    # Score
     score = get_score(lines[0])
 
+    # Indexes
     i_raw = get_indexes_raw(lines[2])
     indexes = get_indexes(i_raw)
 
+    # Source and target word lists
     w_raw = get_words_raw(lines[2])
     words_src = get_words(w_raw)
 
@@ -25,6 +28,7 @@ def parse_alignment(alignment):
     print "\tTarget Words:", words_targ
     print "\tIndexes:", indexes
 
+# Extracts the score from the line
 def get_score(line):
     regstr = r'.*: ([\d.e-]+)\s*'
     match = re.match(regstr, line)
@@ -32,12 +36,14 @@ def get_score(line):
     score = match.group(1)
     return float(score)
 
+# Extract index values as strings from the line
 def get_indexes_raw(line):
     regstr = r'\({([\d ]*)}\)'
     matches = re.findall(regstr, line)
     assert(matches != None)
     return matches
 
+# Turns the tuple of strings into a list of lists of index values
 def get_indexes(indexes_raw):
     indexes = []
     for ind_str in indexes_raw:
@@ -47,12 +53,14 @@ def get_indexes(indexes_raw):
 
     return indexes
 
+# Extract words as strings from the line
 def get_words_raw(line):
     regstr = r'(\S+) \(.*?\)'
     matches = re.findall(regstr, line)
     assert(matches != None)
     return matches
 
+# Turns a tuple of strings into a stripped words
 def get_words(words_raw):
     words = [ w.strip() for w in words_raw ]
     return words
