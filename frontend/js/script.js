@@ -1,13 +1,29 @@
 $(function() {
 
-    // Create an object that holds the mappings
-    var results = getResults("Some text");
+    document.getElementById("translate-button").onclick = translate;
 
 });
 
+function translate(){
+
+  var input = grabInput();
+  getResults(input);
+}
+
+
+function grabInput(){
+  return {
+    inputText : $("#source-text").val(),
+    inputLang : $("#source-lang").val(),
+    targetLang : $("#target-lang").val()
+  }
+}
+
+
+
 // Returns Object with input mapping and translation
 
-function getResults(targetLanguage, inputText){
+function getResults(input){
 
   // $.ajax({
   //   url: "/api/someURLHere",
@@ -47,6 +63,7 @@ function getResults(targetLanguage, inputText){
 
 
 function updateText(results){
+  $("#target-text").empty();
   $.each(results.translation, function( index, value ) {
     console.log(value);
     $("#target-text").append("<span id = " + index + ">" + value + " </span>");
@@ -55,7 +72,20 @@ function updateText(results){
   // bind to each span
   $('span').hover(
     function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
-    function() { $('#word').text(''); $(this).css('background-color',''); }
+    function() { 
+      $('#word').text(''); 
+      $(this).css('background-color',''); 
+        if($(this).context.id == 1){
+          $('#source-text').highlightTextarea({
+          words: ['hello']
+          });
+        }
+        else{
+          $('#source-text').highlightTextarea({
+            words: ['world']
+          });
+        }   
+    }
 
   );
 }
