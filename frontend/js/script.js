@@ -20,7 +20,6 @@ function grabInput(){
 }
 
 
-
 // Returns Object with input mapping and translation
 
 function getResults(input){
@@ -69,13 +68,21 @@ function updateText(results){
     $("#target-text").append("<span id = " + index + ">" + value + " </span>");
   });
 
-  // bind to each span
-  $('span').hover(
-    function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
-    function() { 
-      $('#word').text(''); 
-      $(this).css('background-color',''); 
-        if($(this).context.id == 1){
+
+    // click events for word choices
+  $('#target-text span').click(function() {
+    var word = $(this).text();
+    console.log('word');
+    console.log(word);
+          var options = '<select class="word-choice form-control">' +
+                            '<option>' + word + '</option>' +
+                            '<option>mundial</option>' +
+                            '<option>del mundo</option>' +
+                            '<option>el mundo</option>'
+                          '</select>'
+    var originalWord = $(this).html();
+    $(this).replaceWith(options);
+    if($(this).context.id == 0){
           $('#source-text').highlightTextarea({
           words: ['hello']
           });
@@ -85,6 +92,15 @@ function updateText(results){
             words: ['world']
           });
         }   
+  });
+
+
+  // bind to each span
+  $('span').hover(
+    function() { $('#word').text($(this).css('background-color','#ffff66').text()); },
+    function() { 
+      $('#word').text(''); 
+      $(this).css('background-color',''); 
     }
 
   );
