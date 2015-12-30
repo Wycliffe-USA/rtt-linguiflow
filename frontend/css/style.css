@@ -89,3 +89,22 @@ body {
     margin: 30px;
     height: 50px;
 }
+
+#footer {
+  background-color: rgba(255, 255, 255, 0.4);
+  bottom: 0;
+  color: #666;
+  font-size: 12px;
+  padding: 5px 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+#footer p {
+  margin: 0;
+}
+
+#footer a {
+  color: #a6192e; /* red */
+}
