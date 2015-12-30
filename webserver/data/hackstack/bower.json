@@ -1,0 +1,10 @@
+{
+  "name": "hacktranslate",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "handlebars": "3.0.3",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  }
+}
