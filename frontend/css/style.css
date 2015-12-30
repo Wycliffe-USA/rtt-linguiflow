@@ -1,8 +1,22 @@
 /* Colors:
- * #009ca6 blue
- * #aa1e2c red
- * #f4be18 gold
+ * #039da6 blue
+ * #a6192e red
+ * #f5bb23 gold
  */
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin);
+
+body {
+  background: url("../images/texture.png");
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+}
+
+#header {
+  width: 100%;
+  height: 75px;
+  background-color: #fcfcfb;
+}
 
 .text-row {
   margin-bottom: 10px;
@@ -10,15 +24,31 @@
 
 .lang-select {
   color: #eee;
-  background-color: #009ca6; /* blue */
+  background-color: #039da6; /* blue */
   margin: 5px 0;
   border: none;
+  border-radius: 5px;
+}
+
+#source-text {
+  font-size: 32px;
+  resize: none;
+}
+
+#target-text {
+  font-size: 32px;
+  font-weight: bold;
 }
 
 #translate-button {
+  display: block;
+  float: right;
   color: #000;
-  background-color: #f4be18; /* gold */
+  background-color: #f5bb23; /* gold */
   border: none;
+  border-radius: 5px;
+  margin: 5px 0 5px 100%;
+  clear: both;
 }
 
 #header {
