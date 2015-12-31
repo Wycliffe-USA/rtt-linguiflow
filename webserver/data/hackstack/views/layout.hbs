@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
     <!-- <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"></link>-->
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/custom.css"></link>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
     <!-- custom -->
     {{{block "stylesheets"}}}
     
@@ -30,10 +30,13 @@
   </head>
   
   <body>
+	{{> header}}
+	  
     <div id="layout-container" class="container">
       {{{body}}}
     </div>
     
+    {{> footer}}
   </body>
   
   {{{block "scripts"}}}
