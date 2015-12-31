@@ -1,0 +1,115 @@
+/* Colors:
+ * #039da6 blue
+ * #a6192e red
+ * #f5bb23 gold
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin);
+
+body {
+  background: url("../images/texture.png");
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+}
+
+#header {
+  background-color: #fcfcfb;  
+  width: 100%;
+}
+
+.banner-image {
+  background-image: url('../images/wycliffeImage.png');
+  background-size: cover;
+  width: 100% !important;
+  height: 200px;
+  margin: 0 !important;
+  border-bottom: 2px solid #333;
+  border-top: 2px solid #333;
+}
+
+#main-container {
+  margin: 15px 5px;
+  width: 100% !important;
+}
+
+.text-row {
+  margin-bottom: 10px;
+}
+.word-choice {
+    width: 75px;
+    display: inline;
+}
+.lang-select {
+  background-color: #039da6; /* blue */
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  margin: 5px 0;
+  padding: 5px 10px;
+}
+
+#source-text {
+  font-size: 32px;
+  resize: none;
+  margin: 5px 0;
+  padding: 5px 15px;
+}
+
+#target-text {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 5px 0;
+  padding: 5px 15px;
+}
+
+#translate-button {
+  background-color: #f5bb23; /* gold */
+  border: 1px solid #AAA;
+  border-radius: 5px;
+  color: #000;
+  display: block;
+  float: right;
+  margin: 5px 0 5px 100%;
+  padding: 5px 15px;
+}
+
+#translate-button:hover {
+    background-color: #ffd240;
+}
+
+#lingui-img {
+    height: 70px;
+    margin: 20px;
+}
+
+.word-choice {
+  width: auto;
+  margin:
+}
+
+#wycliffe-img {
+    float: right;
+    margin: 30px;
+    height: 50px;
+}
+
+#footer {
+  background-color: rgba(255, 255, 255, 0.4);
+  bottom: 0;
+  color: #666;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+#footer p {
+  margin: 0;
+}
+
+#footer a {
+  color: #a6192e; /* red */
+}
