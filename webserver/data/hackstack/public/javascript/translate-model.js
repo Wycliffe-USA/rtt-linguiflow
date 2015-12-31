@@ -1,4 +1,4 @@
-var example_model = {
+var translate_model = {
   "English": {
     "Spanish": {
       "all": [
