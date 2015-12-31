@@ -13,7 +13,7 @@ var example_model = {
         {alignment:['naciones'], confidence: 90},
         {alignment:['gentes'], confidence: 13},
       ]
-    }
+    },
     "French": {
       "all": [
         {alignment:['toutes'], confidence: 76},
@@ -29,7 +29,7 @@ var example_model = {
         {alignment:['peuples'], confidence: 40},
       ]
     }
-  }
+  },
   "French": {
     "German": {
       "toutes": [
