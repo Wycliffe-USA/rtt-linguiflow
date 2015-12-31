@@ -83,6 +83,7 @@ app.use('/', indexRouter);
 // example global request handler
 app.all('/*', function(req, res, next){
   // you can add authentication and other request handlers for requests that go beyond this point
+  next();
 });
 
 

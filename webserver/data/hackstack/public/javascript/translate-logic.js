@@ -9,7 +9,7 @@ translate_logic = {
 
 $(document).ready(function() {
 
-  document.getElementById("translate-button").onclick = translate;
+  $("#translate-button").click( translate );
 
   $("#source-text").keypress(function (e) {
     if(e.which == 13) {
@@ -89,12 +89,12 @@ function updateText(results){
     var word = $(this).text();
     console.log('word');
     console.log(word);
-          var options = '<select class="word-choice form-control">' +
-                            '<option>' + word + '  90%</option>' +
-                            '<option>las naciones 15%</option>' +
-                            '<option>de naciones 10%</option>' +
-                            '<option>los paises 1%</option>'
-                          '</select>'
+	  var options = '<select class="word-choice form-control">' +
+						'<option>' + word + '  90%</option>' +
+						'<option>las naciones 15%</option>' +
+						'<option>de naciones 10%</option>' +
+						'<option>los paises 1%</option>'
+					  '</select>'
     var originalWord = $(this).html();
     $(this).replaceWith(options);
     if($(this).context.id == 0){
@@ -121,6 +121,5 @@ function updateText(results){
       $('#word').text(''); 
       $(this).css('background-color',''); 
     }
-
   );
 }
