@@ -8,18 +8,16 @@
     
     <title>{{title}}</title>
     
-    <!-- js libraries -->
+    <!-- js -->
     <script src="/bower_components/handlebars/handlebars.runtime.min.js"></script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     
     
-    <!-- css libraries -->
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
-    <!-- <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"></link>-->
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css"></link>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
-    <!-- custom -->
     {{{block "stylesheets"}}}
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -40,7 +38,8 @@
   </body>
   
   {{{block "scripts"}}}
-  <!-- ajaxDefault() -->
-  <script src="/javascript/init-client.js"></script> 
+  <script src="/config-client.js"></script> <!-- dynamic client-side configuration object -->
+  <script src="/javascript/templates.js"></script> <!-- precompiled client-side handlebars templates -->
+  <script src="/javascript/init-client.js"></script> <!-- ajaxDefault() -->
   
 </html>
