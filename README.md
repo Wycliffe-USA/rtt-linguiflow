@@ -6,6 +6,8 @@
 
 #### Issue Status:
 [![Stories in Ready](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit.png?label=ready&title=Ready)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
+[![Stories In Progress](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit?label=in progress&title=In Progress)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
+[![Stories Backlog](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit?label=in progress&title=Backlog)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
 
 # Wycliffe@Urbana15: #Hacktranslation
 
