@@ -16,5 +16,4 @@ script:
     - bash ./mgiza/tests/my_tokenizer.sh
     - bash ./mgiza/tests/train.sh
 notifications:
-  slack: ftm:SB5Aq83xLhVCjlyvXGYBaxru
-  slack: hack4missions:3KM61BwjOgvb45rTIY12gVv0
+  slack: wycliffe-rtt:VUrvcEm1aT1oBNzxUalH6Zxf
