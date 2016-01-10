@@ -1,8 +1,17 @@
+#!/bin/bash
+#generate_mgiza_configfile.sh
+INSTALL_HOME=$1
+if [ -z "${INSTALL_HOME}" ]; then
+    echo "Generates a configfile for MGIZA."
+    echo "USAGE: ./generate_mgiza_configfile.sh app_root"
+    echo "Example: ./getcorpora.sh ${HOME}"
+    exit 1
+fi
+
+echo "
 adbackoff 0
 compactadtable 1
 compactalignmentformat 0
-coocurrencefile /home/travis/build/bbriggs/wycliffe-urbana-2015/mgiza/corpora/processed/04_en_sp.cooc
-corpusfile /home/travis/build/bbriggs/wycliffe-urbana-2015/mgiza/corpora/processed/03_asv_classified.src_03_spanish_classified.trg.snt
 countcutoff 1e-06
 countcutoffal 1e-05
 countincreasecutoff 1e-06
@@ -23,7 +32,6 @@ emsmoothhmm 2
 hmmdumpfrequency 0
 hmmiterations 5
 log 0
-logfile /home/travis/build/bbriggs/wycliffe-urbana-2015/mgiza/corpora/processed/src_trg_mgiza.log
 m1 5
 m2 0
 m3 3
@@ -84,17 +92,23 @@ probcutoff 1e-07
 probsmooth 1e-07
 readtableprefix
 restart 0
-sourcevocabularyfile /home/travis/build/bbriggs/wycliffe-urbana-2015/mgiza/corpora/processed/03_asv_classified.src.vcb
 t1 1
 t2 0
 t2to3 0
 t3 0
 t345 0
-targetvocabularyfile /home/travis/build/bbriggs/wycliffe-urbana-2015/mgiza/corpora/processed/03_spanish_classified.trg.vcb
 tc
 testcorpusfile
 th 0
 transferdumpfrequency 0
 v 0
 verbose 0
-verbosesentence -10
+verbosesentence -10" > ${INSTALL_HOME}/tools/mgiza_configfile
+
+echo "
+coocurrencefile ${INSTALL_HOME}/corpora/processed/asv_spanish.cooc
+corpusfile ${INSTALL_HOME}/corpora/processed/asv_spanish.snt
+logfile ${INSTALL_HOME}/mgiza/corpora/processed/src_trg_mgiza.log
+sourcevocabularyfile ${INSTALL_HOME}/corpora/processed/asv.vcb
+targetvocabularyfile ${INSTALL_HOME}/corpora/processed/spanish.vcb
+" >> ${INSTALL_HOME}/tools/mgiza_configfile
