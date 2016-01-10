@@ -1,6 +1,10 @@
+// this is a hardcoded stub for what the output from mgiza should be post-processed into:
 var translate_model = {
+  // The data structure stores language -> language translations
   "English": {
     "Spanish": {
+      // in each language, we have 1-gram mappings to arrays of n-gram guesses
+      // each n-gram guess some mysterious confidence scores
       "all": [
         {alignment:['todas'], confidence: 73},
         {alignment:['todos'], confidence: 33},
