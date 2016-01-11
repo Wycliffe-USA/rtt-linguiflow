@@ -1,0 +1,6 @@
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs-postgresql"
+mod "puppetlabs-stdlib"
+mod "puppetlabs-nodejs"
+mod "jfryman-nginx"
