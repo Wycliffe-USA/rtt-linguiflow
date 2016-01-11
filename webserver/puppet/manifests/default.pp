@@ -19,7 +19,6 @@ file {'/usr/bin/node':
 
 package { 'git':
   ensure  => installed,
-  require => File['/usr/bin/node'],
 }
 
 exec { 'npm i':
@@ -34,7 +33,7 @@ exec {'bower install':
   cwd         => '/var/www/project/hackstack',
   creates     => '/var/www/project/hackstack/bower_components/bootstrap/README.md',
   path        => ['/usr/bin'],
-  require     => Package['git'],
+  require     => [Package['git'], File['/usr/bin/node']],
 }
 
 service { 'linguiflow':
