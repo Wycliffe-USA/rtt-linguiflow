@@ -1,0 +1,42 @@
+{{#extend "stylesheets"}}
+  <link rel="stylesheet" href="../bower_components/jquery-highlighttextarea/jquery.highlighttextarea.min.css">
+{{/extend}}
+  
+  <div id="main-container" class="container">
+    <div class="row text-row">
+      <div id="dummy" class="col-sm-1"></div>
+      <div id="source-container" class="col-sm-5">
+        <select id="source-lang" class="lang-select">
+          <option value="English" selected="selected">English</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+          <option value="Chinese">Chinese</option>
+        </select>
+        <form>
+          <textarea id="source-text" class="form-control" rows="1"></textarea>
+        </form>
+        <button id="translate-button" type="button">Translate</button>
+      </div>
+      <div id="target-container" class="col-sm-5">
+        <select id="target-lang" class="lang-select">
+          <option value="English">English</option>
+          <option value="Spanish" selected="selected">Spanish</option>
+          <option value="French">French</option>
+          <option value="Chinese">Chinese</option>
+        </select>
+        <div id="target-text">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+
+{{#extend "modals"}}
+  
+{{/extend}}
+
+{{#extend "scripts"}}
+  <script src="/javascript/translate-model.js"></script> <!-- import mock translation data -->
+  <script src="/javascript/translate-logic.js"></script> <!-- logic for translate webservices -->
+  <script src="../bower_components/jquery-highlighttextarea/jquery.highlighttextarea.min.js"></script>
+{{/extend}}
