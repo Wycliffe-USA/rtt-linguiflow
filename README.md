@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit.png?label=ready&title=Ready)](https://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
 #### Build Status:
 ##### Master
 [![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=master)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015) 
