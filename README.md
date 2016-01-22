@@ -29,4 +29,6 @@ Want to contribute? We are seeking people who can contribute code, testing and r
 
 #### Running the development environment
 
-After downloading the repo, ensure you have Vagrant installed and a compatible hypervisor. From the webserver director, run `vagrant up` to start the linguiflow VM and begin provisioning. After the VM provisions, the webserver will start on port 3000. 
+After downloading the repo, ensure you have Vagrant installed and a compatible hypervisor. After installing vagrant, install the [vagrant-librarian-puppet](https://github.com/mhahn/vagrant-librarian-puppet) plugin by running `vagrant plugin install vagrant-librarian-plugin`. This is a necessary step for the puppet provisioner, keeps the repo small, and keeps modules up to date. 
+
+After doing that, from the webserver directory, run `vagrant up` to start the linguiflow VM and begin provisioning. After the VM provisions, the webserver will automatically start on port 3000. 

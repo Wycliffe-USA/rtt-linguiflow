@@ -1,6 +1,6 @@
-puppet/modules/
-puppet/.librarian/
-puppet/.tmp/
-.vagrant/
+puppet/modules/*
+puppet/.librarian/*
+puppet/.tmp/*
+.vagrant/*
 puppet/Puppetfile.lock
 data/hackstack/node_app.log
