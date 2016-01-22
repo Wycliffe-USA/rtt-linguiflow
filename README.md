@@ -1,13 +1,12 @@
 #### Build Status:
 ##### Master
-[![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=master)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015) 
+[![Build Status](https://travis-ci.org/Wycliffe-USA/rtt-linguiflow.svg?branch=master)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015) 
 ##### Development
-[![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=development)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015)
+[![Build Status](https://travis-ci.org/Wycliffe-USA/rtt-linguiflow.svg?branch=development)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015)
 
 #### Issue Status:
-[![Stories in Ready](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit.png?label=ready&title=Ready)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
-[![Stories In Progress](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit.png?label=in%20progress&title=In%20Progress)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
-[![Stories Backlog](https://badge.waffle.io/Wycliffe-USA/rapid-translation-toolkit.png?label=Backlog&title=Backlog)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
+[![Stories in Ready](https://badge.waffle.io/Wycliffe-USA/rtt-linguiflow.png?label=ready&title=Ready)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
+[![Stories In Progress](https://badge.waffle.io/Wycliffe-USA/rtt-linguiflow.png?label=in%20progress&title=In%20Progress)](http://waffle.io/Wycliffe-USA/rapid-translation-toolkit)
 
 # Wycliffe@Urbana15: #Hacktranslation
 
