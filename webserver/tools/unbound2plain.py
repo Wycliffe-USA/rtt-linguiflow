@@ -15,7 +15,7 @@ def unbound2plain(infile,outfile):
         with open(infile) as source:
             for line in source:
                 if not line.startswith('#'):
-                    line = re.sub(r'^[\d\sOn]+\t','', line)
+                    line = re.sub(r'^[\d\sON]+\t','', line)
                     line = re.sub(r'\r\n$','\n',line)
                     tmp_file.write(line)
     source.close()
