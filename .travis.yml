@@ -11,9 +11,9 @@ before_install:
     - sudo pip install -U gensim
 
 script: 
-    - bash ./mgiza/tests/prerequisites.sh
-    - bash ./mgiza/tests/unbound2plain.sh
-    - bash ./mgiza/tests/my_tokenizer.sh
-    - bash ./mgiza/tests/train.sh
+    - bash ./webserver/tests/prerequisites.sh
+    - bash ./webserver/tests/unbound2plain.sh
+    - bash ./webserver/tests/my_tokenizer.sh
+    - bash ./webserver/tests/train.sh
 notifications:
   slack: wycliffe-rtt:VUrvcEm1aT1oBNzxUalH6Zxf
