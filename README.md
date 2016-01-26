@@ -17,7 +17,7 @@
 
 Linguiflow is aimed at assisting translators and linguists in the field working with low-resources languages. When first learning and documenting a language for translation purposes, one of the major hurdles is simply gathering, learning, and cataloging words. Many great tools already exist for data organization and cataloging, such as [the Field Linguist's Toolbox](http://www-01.sil.org/computing/toolbox/) and methods for collecting words, such as [Rapid Word Collection](http://rapidwords.net/), both projects from [SIL](http://www.sil.org/). 
 
-Linguiflow aims to further assist and augment field translators in the word discovery process by taking parallel text in two languages, one well-known and one low-resource language, and analyze them to try and determine word pairs between the two. This could provide the translator with additional confidence in defining a word, help the translator discover latent phrases, or provide additional suggestions and alternative words that are used in similar ways.
+Linguiflow aims to further assist and augment field translators in the word discovery process by taking parallel text in two languages, one well-known and one low-resource language, and analyzing them to try and determine word pairs between the two. This could provide the translator with additional confidence in defining a word, help the translator discover latent phrases, or provide additional suggestions and alternative words that are used in similar ways.
 
 ### Usage
 
