@@ -1,0 +1,10 @@
+# Sentence pair (1) source length 11 target length 11 alignment score : 9.23637e-09
+en el principio crió dios los cielos y la tierra . 
+NULL ({ }) in ({ 1 }) the ({ 2 }) beginning ({ 3 }) god ({ 5 }) created ({ 4 }) the ({ 6 }) heavens ({ 7 }) and ({ 8 }) the ({ 9 }) earth ({ 10 }) . ({ 11 }) 
+# Sentence pair (2) source length 30 target length 32 alignment score : 1.30164e-37
+y la tierra estaba desordenada y vacía , y las tinieblas estaban sobre la haz del abismo , y el espíritu de dios se movía sobre la haz de las aguas . 
+NULL ({ }) and ({ 1 }) the ({ 2 }) earth ({ 3 }) was ({ 4 }) waste ({ 5 }) and ({ 6 }) void ({ 7 }) ; ({ 8 }) and ({ 9 }) darkness ({ 10 11 }) was ({ 12 }) upon ({ 13 }) the ({ 14 }) face ({ 15 }) of ({ 16 }) the ({ }) deep ({ 17 }) : ({ 18 }) and ({ 19 }) the ({ 20 }) spirit ({ 21 }) of ({ 22 }) god ({ 23 }) moved ({ 24 25 }) upon ({ 26 }) the ({ 27 }) face ({ 28 }) of ({ 29 }) the ({ 30 }) waters ({ 31 32 }) 
+# Sentence pair (3) source length 14 target length 13 alignment score : 1.24554e-18
+y dijo dios : sea la luz : y fué la luz . 
+NULL ({ 6 11 }) and ({ 1 }) god ({ 3 }) said ({ 2 4 }) , ({ }) let ({ }) there ({ }) be ({ 5 }) light ({ 7 }) : ({ 8 }) and ({ 9 }) there ({ }) was ({ 10 }) light ({ 12 }) . ({ 13 }) 
+# Sentence pair (4) source length 20 target length 18 alignment score : 2.31145e-20
