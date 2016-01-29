@@ -1,5 +1,8 @@
 #!/bin/bash
 #tokenize.sh
+
+#INSTALL_HOME can be any arbitrary dir where you have write perms
+#However, it needs to be the same for all run scripts. 
 INSTALL_HOME=$1
 CONFIGFILE=$2
 if [ -z "${INSTALL_HOME}" ] | [ -z "${CONFIGFILE}" ]; then
