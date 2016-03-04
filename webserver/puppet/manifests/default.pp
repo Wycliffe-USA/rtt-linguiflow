@@ -1,3 +1,5 @@
+include ::couchdb
+
 class { '::nodejs':
   manage_package_repo       => false,
   nodejs_dev_package_ensure => 'present',
@@ -43,11 +45,3 @@ service { 'linguiflow':
 }
 
 class {'nginx': }
-
-class {'postgresql::server': }
-
-postgresql::server::db { 'linguiflow_db':
-  user     => 'linguiflow',
-  password => postgresql_password('linguiflow', 'linguiflow'),
-  require  => Class['postgresql::server']
-}

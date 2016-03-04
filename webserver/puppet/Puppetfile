@@ -1,6 +1,8 @@
 forge "http://forge.puppetlabs.com"
 
-mod "puppetlabs-postgresql"
 mod "puppetlabs-stdlib"
+mod "puppetlabs-concat","1.2.5"
 mod "puppetlabs-nodejs"
 mod "jfryman-nginx"
+mod "camptocamp-couchdb",
+    :git => 'https://github.com/bbriggs/puppet-couchdb.git'
