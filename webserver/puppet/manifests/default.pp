@@ -1,3 +1,5 @@
+include ::couchdb
+
 class { '::nodejs':
   manage_package_repo       => false,
   nodejs_dev_package_ensure => 'present',
@@ -5,15 +7,15 @@ class { '::nodejs':
 }
 
 package{'bower':
-  ensure      => 'installed',
-  provider    => 'npm',
-  require     => Class['::nodejs'],
+  ensure   => 'installed',
+  provider => 'npm',
+  require  => Class['::nodejs'],
 }
 
 file {'/usr/bin/node':
-  ensure      => 'link',
-  target      => '/usr/bin/nodejs',
-  require     => Class['::nodejs'],
+  ensure  => 'link',
+  target  => '/usr/bin/nodejs',
+  require => Class['::nodejs'],
 }
 
 
@@ -22,32 +24,24 @@ package { 'git':
 }
 
 exec { 'npm i':
-  cwd         => '/var/www/project/hackstack',
-  creates     => '/var/www/project/hackstack/node_modules/express/History.md',
-  path        => ['/usr/bin'],
-  require     => Class['::nodejs'],
+  cwd     => '/var/www/project/hackstack',
+  creates => '/var/www/project/hackstack/node_modules/express/History.md',
+  path    => ['/usr/bin'],
+  require => Class['::nodejs'],
 }
 
 exec {'bower install':
-  command     => '/usr/local/bin/bower install --config.interactive=false --allow-root',
-  cwd         => '/var/www/project/hackstack',
-  creates     => '/var/www/project/hackstack/bower_components/bootstrap/README.md',
-  path        => ['/usr/bin'],
-  require     => [Package['git'], File['/usr/bin/node']],
+  command => '/usr/local/bin/bower install --config.interactive=false --allow-root',
+  cwd     => '/var/www/project/hackstack',
+  creates => '/var/www/project/hackstack/bower_components/bootstrap/README.md',
+  path    => ['/usr/bin'],
+  require => [Package['git'], File['/usr/bin/node']],
 }
 
 service { 'linguiflow':
-  ensure => running,
+  ensure   => running,
   provider => 'upstart',
-  require => Exec['bower install'],
+  require  => Exec['bower install'],
 }
 
 class {'nginx': }
-
-class {'postgresql::server': }
-
-postgresql::server::db { 'linguiflow_db':
-  user          => 'linguiflow',
-  password      => postgresql_password('linguiflow', 'linguiflow'),
-  require       => Class['postgresql::server']
-}
