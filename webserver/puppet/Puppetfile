@@ -1,8 +1,9 @@
 forge "http://forge.puppetlabs.com"
 
 mod "puppetlabs-stdlib"
-mod "puppetlabs-concat","1.2.5"
+mod "puppetlabs-concat"
 mod "puppetlabs-nodejs"
 mod "jfryman-nginx"
 mod "camptocamp-couchdb",
-    :git => 'https://github.com/bbriggs/puppet-couchdb.git'
+    :git => 'https://github.com/bbriggs/puppet-couchdb.git',
+    :ref => 'development'
