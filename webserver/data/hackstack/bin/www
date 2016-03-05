@@ -1,5 +1,8 @@
 #!/usr/bin/node
 
+// before the app can start, validate the db
+require('../dbSetup.js')(
+  function() {
     /**
      * Module dependencies.
      */
@@ -88,3 +91,5 @@
         : 'port ' + addr.port;
       debug('Listening on ' + bind);
     }
+  }
+);
