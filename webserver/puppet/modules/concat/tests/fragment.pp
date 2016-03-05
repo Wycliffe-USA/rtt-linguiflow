@@ -1,10 +1,9 @@
 concat { 'testconcat':
-  ensure    => present,
-  path      => '/tmp/concat',
-  owner     => 'root',
-  group     => 'root',
-  mode      => '0664',
-  show_diff => true,
+  ensure => present,
+  path   => '/tmp/concat',
+  owner  => 'root',
+  group  => 'root',
+  mode   => '0664',
 }
 
 concat::fragment { '1':
