@@ -23,11 +23,6 @@ package { 'git':
   ensure  => installed,
 }
 
-package {'couchdb':
-  ensure => installed,
-  provider => 'pip',
-}
-
 exec { 'npm i':
   cwd     => '/var/www/project/hackstack',
   creates => '/var/www/project/hackstack/node_modules/express/History.md',
