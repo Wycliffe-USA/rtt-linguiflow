@@ -1,7 +1,7 @@
 import re
 import sys
 import json
-
+import couchdb
 fname = 'sample_out'
 
 class Database(object):
@@ -33,9 +33,9 @@ def parse_alignment(alignment):
     raw_lines = alignment.split('\n')
     lines = remake_lines(raw_lines)
 
-    print lines[0]
-    print lines[1]
-    print lines[2]
+#    print lines[0]
+#    print lines[1]
+#    print lines[2]
 
     # Score
     score = get_score(lines[0])
@@ -150,10 +150,12 @@ def print_to_file(val, filename):
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         raise Exception("Usage: parse_mgiza mgiza_file output_file")
+    couch = couchdb.Server()
+    db = couch['alignments']
     database = parse_output(sys.argv[1])
-    jsonified = json.dumps(database.mapping)
-    print ''
-    print jsonified
-    print_to_file(jsonified, sys.argv[2])
-
-
+    with open(sys.argv[2],'w') as f:
+        json.dump(database.mapping,f)
+    with open(sys.argv[2],'r') as f:
+        jsonified = json.load(f)
+        result = db.save(jsonified)
+        print result
