@@ -153,9 +153,15 @@ if __name__ == '__main__':
     couch = couchdb.Server()
     db = couch['alignments']
     database = parse_output(sys.argv[1])
-    with open(sys.argv[2],'w') as f:
-        json.dump(database.mapping,f)
+    with open(sys.argv[2],'a') as f:
+        for key in database.mapping:
+            tmp = {key:database.mapping[key]}
+            print tmp
+            json.dump(tmp,f)
+            f.write('\n')
     with open(sys.argv[2],'r') as f:
-        jsonified = json.load(f)
-        result = db.save(jsonified)
-        print result
+        results = []
+        for line in f:
+            jsonified = json.loads(line)
+            results.append(db.save(jsonified))
+        print "Inserted %s documents" % len(results)
