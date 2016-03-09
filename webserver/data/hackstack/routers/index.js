@@ -16,5 +16,26 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/queryAlignment', function(req, res, next) {
+  console.log(req.body);
+  
+  var inputText  = req.body.inputText;
+	var tokenArray = inputText.split(/( |n't|'s)/).filter( function(s){return s != '' && s != ' '} );
+  
+  console.log(tokenArray);
+  
+  // script can be found... somewhere
+  // '../../tools/queryAlignment.py'
+  
+  // call this script as a child process
+  
+  var results;
+  
+  // populate results from script
+  
+  console.log( results );
+  res.send( results );
+});
+
 
 module.exports = router;
