@@ -55,38 +55,43 @@ function getInput() {
 // sets translate_logic.results with the translation mappings
 function getResults(){
 
-  // $.ajax({
-  //   url: "/api/someURLHere",
-  //   method: "POST",
-  //   data: {
-  //     text : inputText,
-  //     language : targetLanguage
-  //   },
-  //   dataType: "json",
-  //   success: function (data) {
-  //     if (data) {
-  //       updateText(data)
-  //     } else {
-  //       alert("Didn't work");
-  //     }
-  //   }
-  //
-  // });
+  $.ajax(
+    ajaxDefaults(
+      {
+        type: "POST",
+        url: "/queryAlignment",
+        data: {
+          sourceLang : translate_logic.inputs.sourceLang,
+          targetLang : translate_logic.inputs.targetLang,
+          inputText :  translate_logic.inputs.text
+        },
+        success: function (data, err) {
+          console.log(data, err);
+          if (data) {
+            updateText(data);
+          } else {
+            alert("Didn't work");
+          }
+        }
+
+      }
+    )
+  );
 
   // ===================================
-    var results = [];
-		
-		$.each(  translate_logic.inputs.words, function( index, sourceWord ) {
-			console.log(sourceWord);
-			var matches = translate_model
-										 [ translate_logic.inputs.sourceLang]
-											 [ translate_logic.inputs.targetLang]
-												 [sourceWord.token];
-			results.push( matches );
-		});
-		console.log(results);
-		
-		translate_logic.results = results;
+  //   var results = [];
+  // 
+  //   $.each(  translate_logic.inputs.words, function( index, sourceWord ) {
+  //     console.log(sourceWord);
+  //     var matches = translate_model
+  //                    [ translate_logic.inputs.sourceLang]
+  //                      [ translate_logic.inputs.targetLang]
+  //                        [sourceWord.token];
+  //     results.push( matches );
+  //   });
+  //   console.log(results);
+  // 
+  //   translate_logic.results = results;
   // ===================================
 }
 
