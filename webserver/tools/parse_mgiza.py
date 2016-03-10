@@ -155,7 +155,7 @@ if __name__ == '__main__':
     database = parse_output(sys.argv[1])
     with open(sys.argv[2],'a') as f:
         for key in database.mapping:
-            tmp = {"src":key,"maps":database.mapping[key]}
+            tmp = {"type":"alignment","src":key,"maps":database.mapping[key]}
 #            print tmp
             json.dump(tmp,f)
             f.write('\n')
