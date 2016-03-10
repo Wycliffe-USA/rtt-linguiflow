@@ -34,8 +34,13 @@ var databases = {
              emit(doc.sourceLang, [doc.targetLang, doc.sentencePairs]);
            }
          }.toString()
+      },
+
+      alignments_by_srcWord: {
+         map: function(doc) {
+           emit(doc.src, doc.maps);
+         }.toString()
       }
-      
     }
   },
   
