@@ -13,7 +13,7 @@ def setTranslations(W, S, F):
                                         index = i
                                 total = total + a['value']['maps'][keys[i]]
                         if F == 'true':
-                                a['value']['maps'][keys[index]] = 2 * a['value']['maps'][keys[index]]
+                               # a['value']['maps'][keys[index]] = 2 * a['value']['maps'][keys[index]]
                         elif F == 'false':
                                 a['value']['maps'][keys[index]] = 0
                         for i in range(0, len(keys)):
