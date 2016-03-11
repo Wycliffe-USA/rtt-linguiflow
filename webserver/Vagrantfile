@@ -1,16 +1,18 @@
 Vagrant.configure(2) do |config|
-    config.vm.box = "ubuntu/trusty64"
-    config.vm.synced_folder "data/", "/var/www/project"
-    config.vm.synced_folder "tools/", "/home/vagrant/tools"
-    config.vm.network "forwarded_port", guest: 3000, host: 3000  # nodejs appserver
-    config.vm.network "forwarded_port", guest: 5984, host: 5984  # couchdb api
-    config.vm.provision "file", source: "files/linguiflow.conf", destination: "/home/vagrant/linguiflow.conf"
-#    config.librarian_puppet.puppetfile_dir = "puppet"
-    config.vm.provision "shell" do |s|
-        s.path = "bootstrap.sh"
-    end
-    config.vm.provision "puppet" do |p|
-        p.module_path = "puppet/modules"
-        p.manifests_path = "puppet/manifests"
-    end
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/www", "1"]
+  end
+  config.vm.synced_folder "data/", "/var/www/project"
+  config.vm.synced_folder "tools/", "/home/vagrant/tools"
+  config.vm.network "forwarded_port", guest: 3000, host: 3000  # nodejs appserver
+  config.vm.network "forwarded_port", guest: 5984, host: 5984  # couchdb api
+  config.vm.provision "file", source: "files/linguiflow.conf", destination: "/home/vagrant/linguiflow.conf"
+  config.vm.provision "shell" do |s|
+    s.path = "bootstrap.sh"
+  end
+  config.vm.provision "puppet" do |p|
+    p.module_path = "puppet/modules"
+    p.manifests_path = "puppet/manifests"
+  end
 end
