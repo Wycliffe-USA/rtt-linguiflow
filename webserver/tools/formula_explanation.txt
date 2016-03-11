@@ -1,3 +1,5 @@
+METHOD 1 
+
 Calculating Word Percent Confidence
 Percent 1 = #matches(Origin to Target Language)/total matches (O to T)
 Percent 2 = #matches(Target to Origin Language)/total matches (T to O)
@@ -11,12 +13,12 @@ Accepting And Rejecting Translations
 Initial Data:
 English word: Nap
 Translations     | Matches | Percent 1|Percent 2|Value
-Siesta              |       5       |    50%    |  33%      |    1
-Fiesta              |       3       |     30%   |   13%     |    1
-El                    |         2      |     20%   |    2%      |    1
+Siesta           |       5       |     50%   |   33%     |    1
+Fiesta           |       3       |     30%   |   13%     |    1
+El               |       2       |     20%   |    2%     |    1
 Siesta matches to an english word 15 times
-Fiesta ..... 23 times
-El .....103 times
+Fiesta matches to an english word 23 times
+El matches to an english word 103 times
 
 python T2 Nap El 0
 Translations     | Matches | Percent 1|Percent 2|Value
@@ -47,15 +49,10 @@ El .....101 times
 
 
 
+Accept general formula: F(matches) = new_matches && new_matches>matches
+Possible idea: Redistribute the removed matches to the other words (similar to method 2)
 
-
-
-
-
-
-
-
-
+METHOD 2
 
 Calculating Word Percent Confidence
 ~~~~English Sentence~~~~"the"~~~E~~"the"~~~E~~~"the"~~~E~~~~
@@ -75,7 +72,8 @@ the->tabla = SUM(Pair score*count)/matches=(20*1)/1=20
 Formula
 Data from en-sp-align_words.sh
 Accept: Set percentage to 100%
-Reject: Set percentage to 0%
+Reject: Set percentage to 0%, Increase remaining percentages by current_percentage+(current_percentage*removed_percentage)
+
 
 Accepting and Rejecting Translations
 Initial Data:
@@ -100,4 +98,4 @@ Nap->Fiesta = 20%
 Nap->El = 15%
 
 Cat ->Siesta = 0%
-Cat->Gato = 85%
+Cat->Gato = .85+.85*.15 = 97%
