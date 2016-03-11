@@ -1,6 +1,11 @@
 #---------------------------------------------------
 
 # function: list setTranslations(string, string, boolean)
+# Takes in a word from source, a word from target and a boolean value and adjusts #certainties accordingly
+# params:       string W --     input word
+#		string S —- 	target word
+#		bool   F —- 	Accept (T) Reject (F)
+# output:       list outp --    output list of translation-freq pairs
 def setTranslations(W, S, F):
         outp = []
         for a in alignment_list:
