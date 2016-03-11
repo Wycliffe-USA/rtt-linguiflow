@@ -1,0 +1,108 @@
+METHOD 1 
+
+Calculating Word Percent Confidence
+Percent 1 = #matches(Origin to Target Language)/total matches (O to T)
+Percent 2 = #matches(Target to Origin Language)/total matches (T to O)
+
+Data
+Matches (O to T) from parse_mgiza.py
+Matches (T to O) from parse_mgiza.py with texts switched, or a program to tally from (O to T) DB
+
+Formula
+Accept: double matches
+Reject: reduce matches to 0
+
+Accepting And Rejecting Translations
+Initial Data:
+English word: Nap
+Translations     |Matches| Percent 1 |Percent 2  |Value
+Siesta           |    5  |     50%   |   33%     |    1
+Fiesta           |    3  |     30%   |   13%     |    1
+El               |    2  |     20%   |    2%     |    1
+Siesta matches to an english word 15 times
+Fiesta matches to an english word 23 times
+El matches to an english word 103 times
+
+python T2 Nap El 0
+Translations     |Matches |Percent 1|Percent 2|Value
+Siesta           |   5    |  62%    |  33%    |  1
+Fiesta           |   3    |  38%    |  13%    |  1
+El               |   0    |   0%    |   0%    |  0
+Siesta matches to an english word 15 times
+Fiesta ..... 23 times
+El .....101 times
+
+python T2 Nap Siesta 1
+Translations     | Matches | Percent 1|Percent 2|Value
+Siesta           |   10    |    77%   |   50%   |  2  
+Fiesta           |    3    |    23%   |   13%   |  1
+El               |    0    |     0%   |    0%   |  0
+Siesta matches to an english word 20 times
+Fiesta ..... 23 times
+El .....101 times
+
+python T2 Nap Fiesta 1
+Translations     | Matches | Percent 1|Percent 2|Value
+Siesta           |   10    |    62%   |   50%   |  2  
+Fiesta           |    6    |    38%   |   23%   |  2
+El               |    0    |     0%   |    0%   |  0
+Siesta matches to an english word 20 times
+Fiesta ..... 26 times
+El .....101 times
+
+
+
+Accept general formula: F(matches) = new_matches && new_matches>matches
+Possible idea: Redistribute the removed matches to the other words (similar to method 2)
+
+****************************************************************
+
+METHOD 2
+
+Calculating Word Percent Confidence
+~~~~English Sentence~~~~"the"~~~E~~"the"~~~E~~~"the"~~~E~~~~
+~~~~Spanish Sentence~~~~"la"~~~S~~~"la"~~~~S~~~"fiesta"~~~S~~~
+Pair Score = 6
+
+~~~~English Sentence~~~~"the"~~~E~~"the"~~~E~~~"the"~~~E~~~~
+~~~~Spanish Sentence~~~~"la"~~~S~~~"tabla"~~~~S~~~"fiesta"~~~S~~~
+Pair Score = 20
+
+the->la = SUM(Pair score*count)/matches = (6*2+1*20)/3=11
+the->fiesta = SUM(Pair score*count)/matches =(6*1+20*1)/2 = 13
+the->tabla = SUM(Pair score*count)/matches=(20*1)/1=20
+
+**The resulting numbers should be multiplied by a constant 10^x so the results range from 0 to 100%
+
+Data
+Pair score from en-sp-align_words.sh
+
+Formula 
+Accept: Set percentage to 100%
+Reject: Set percentage to 0%, Increase remaining percentages by current_percentage+(current_percentage*removed_percentage)
+
+
+Accepting and Rejecting Translations
+Initial Data:
+Nap->Siesta = 65%
+Nap->Fiesta = 20%
+Nap->El = 15%
+
+Cat ->Siesta = 15%
+Cat->Gato = 85%
+
+python T2 Nap Fiesta 1
+Nap->Siesta = 100%
+Nap->Fiesta = 20%
+Nap->El = 15%
+
+Cat ->Siesta = 15%
+Cat->Gato = 85%
+
+python T2 Cat Siesta 0
+Nap->Siesta = 100%
+Nap->Fiesta = 20%
+Nap->El = 15%
+
+Cat ->Siesta = 0%
+Cat->Gato = .85+.85*.15 = 97%
