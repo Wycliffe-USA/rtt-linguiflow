@@ -1,5 +1,7 @@
 #### Build Status:
 ##### Master
+
+[![Join the chat at https://gitter.im/Wycliffe-USA/rapid-translation-toolkit](https://badges.gitter.im/Wycliffe-USA/rapid-translation-toolkit.svg)](https://gitter.im/Wycliffe-USA/rapid-translation-toolkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=master)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015) 
 ##### Development
 [![Build Status](https://travis-ci.org/bbriggs/wycliffe-urbana-2015.svg?branch=development)](https://travis-ci.org/bbriggs/wycliffe-urbana-2015)
